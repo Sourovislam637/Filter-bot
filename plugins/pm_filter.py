@@ -1783,9 +1783,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data.startswith("upalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
-    user = awaitclient.get_users(from_user)
-    await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uᴘʟᴏᴀᴅᴇᴅ !", show_alert=True)
-
+            user = await client.get_users(from_user)
+            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uᴘʟᴏᴀᴅᴇᴅ !", show_alert=True)
 elif query.data.startswith("unalert"):
     ident, from_user = query.data.split("#")
     if int(query.from_user.id) == int(from_user):
