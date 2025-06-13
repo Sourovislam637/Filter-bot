@@ -1797,22 +1797,32 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("generate_stream_link"):
+        elif query.data.startswith("generate_stream_link"):
         _, file_id = query.data.split(":")
         try:
             log_msg = await client.send_cached_media(chat_id=LOG_CHANNEL, file_id=file_id)
-            fileName = {quote_plus(get_name(log_msg))}
-            stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            button = [[
-                InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=download),
-                InlineKeyboardButton('• ᴡᴀᴛᴄʜ •', url=stream)
-            ],[
-                InlineKeyboardButton("• ᴡᴀᴛᴄʜ ɪɴ ᴡᴇʙ ᴀᴘᴘ •", web_app=WebAppInfo(url=stream))
-            ]]
-            await query.message.edit_reply_markup(InlineKeyboardMarkup(button))
+            file_name = get_name(log_msg)
+            stream_link = f"{URL}watch/{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
+            download_link = f"{URL}{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
+
+            buttons = [
+                [
+                    InlineKeyboardButton("📥 Download", url=download_link),
+                    InlineKeyboardButton("▶️ Watch", url=stream_link)
+                ],
+                [
+                    InlineKeyboardButton("🌐 Open WebApp", web_app=WebAppInfo(url=stream_link))
+                ]
+            ]
+
+            await query.message.edit_reply_markup(
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            await query.answer()
+
         except Exception as e:
-            print(e)
-            await query.answer(f"something went wrong\n\n{e}", show_alert=True)
+            print(f"Stream Error: {e}")
+            await query.answer("❌ Unable to generate stream/download link.", show_alert=True)
             return
     
     elif query.data == "reqinfo":
