@@ -1783,56 +1783,52 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data.startswith("upalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
-            user = await client.get_users(from_user)
-            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uᴘʟᴏᴀᴅᴇᴅ !", show_alert=True)
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-        
-    elif query.data.startswith("unalert"):
-        ident, from_user = query.data.split("#")
-        if int(query.from_user.id) == int(from_user):
-            user = await client.get_users(from_user)
-            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uɴᴀᴠᴀɪʟᴀʙʟᴇ !", show_alert=True)
-        else:
-            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
+    user = await client.get_users(from_user)
+    await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uᴘʟᴏᴀᴅᴇᴅ !", show_alert=True)
 
-    elif query.data.startswith("generate_stream_link"):
-        elif query.data.startswith("generate_stream_link"):
-        _, file_id = query.data.split(":")
-        try:
-            log_msg = await client.send_cached_media(chat_id=LOG_CHANNEL, file_id=file_id)
-            file_name = get_name(log_msg)
-            stream_link = f"{URL}watch/{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
-            download_link = f"{URL}{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
+elif query.data.startswith("unalert"):
+    ident, from_user = query.data.split("#")
+    if int(query.from_user.id) == int(from_user):
+        user = await client.get_users(from_user)
+        await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇǫᴜᴇsᴛ ɪs Uɴᴀᴠᴀɪʟᴀʙʟᴇ !", show_alert=True)
+    else:
+        await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
-            buttons = [
-                [
-                    InlineKeyboardButton("📥 Download", url=download_link),
-                    InlineKeyboardButton("▶️ Watch", url=stream_link)
-                ],
-                [
-                    InlineKeyboardButton("🌐 Open WebApp", web_app=WebAppInfo(url=stream_link))
-                ]
+elif query.data.startswith("generate_stream_link"):
+    _, file_id = query.data.split(":")
+    try:
+        log_msg = await client.send_cached_media(chat_id=LOG_CHANNEL, file_id=file_id)
+        file_name = get_name(log_msg)
+        stream_link = f"{URL}watch/{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
+        download_link = f"{URL}{log_msg.id}/{quote_plus(file_name)}?hash={get_hash(log_msg)}"
+
+        buttons = [
+            [
+                InlineKeyboardButton("📥 Download", url=download_link),
+                InlineKeyboardButton("▶️ Watch", url=stream_link)
+            ],
+            [
+                InlineKeyboardButton("🌐 Open WebApp", web_app=WebAppInfo(url=stream_link))
             ]
+        ]
 
-            await query.message.edit_reply_markup(
-                reply_markup=InlineKeyboardMarkup(buttons)
-            )
-            await query.answer()
+        await query.message.edit_reply_markup(
+            reply_markup=InlineKeyboardMarkup(buttons)
+        )
+        await query.answer()
 
-        except Exception as e:
-            print(f"Stream Error: {e}")
-            await query.answer("❌ Unable to generate stream/download link.", show_alert=True)
-            return
-    
-    elif query.data == "reqinfo":
-        await query.answer(text=script.REQINFO, show_alert=True)
+    except Exception as e:
+        print(f"Stream Error: {e}")
+        await query.answer("❌ Unable to generate stream/download link.", show_alert=True)
 
-    elif query.data == "select":
-        await query.answer(text=script.SELECT, show_alert=True)
+elif query.data == "reqinfo":
+    await query.answer(text=script.REQINFO, show_alert=True)
 
-    elif query.data == "sinfo":
-        await query.answer(text=script.SINFO, show_alert=True)
+elif query.data == "select":
+    await query.answer(text=script.SELECT, show_alert=True)
+
+else:
+    await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data == "start":
         if PREMIUM_AND_REFERAL_MODE == True:
