@@ -202,8 +202,8 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
             ]]
-        else:
-            buttons = [[
+            else:
+                buttons = [[
                 InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
