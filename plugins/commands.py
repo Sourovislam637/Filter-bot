@@ -135,7 +135,6 @@ async def start(client, message):
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         if PREMIUM_AND_REFERAL_MODE == True:
             buttons = [[
-                InlineKey[[
                 InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
