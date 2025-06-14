@@ -48,7 +48,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         if PREMIUM_AND_REFERAL_MODE == True:
-            buttons =  [[
+            buttons = [[
                 InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
@@ -98,7 +98,7 @@ async def start(client, message):
             await message.reply_text("Make sure Bot is admin in Forcesub channel")
             return
         try:
-            btn = [[InlineKeyboardButton("📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻", url=invite_link.invite_link)]]
+            btn = [[InlineKeyboardButton("ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link)]]
             if message.command[1] != "subscribe":
                 if REQUEST_TO_JOIN_MODE == True:
                     if TRY_AGAIN_BTN == True:
@@ -190,30 +190,30 @@ async def start(client, message):
         else:
             if PREMIUM_AND_REFERAL_MODE == True:
                 buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
-            ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
-            ],[
-                InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
-            ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
-            ]]
+                    InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
+                    InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                ],[
+                    InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
+                    InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                ],[
+                    InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
+                ],[
+                    InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                ]]
             else:
                 buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
-            ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
-            ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
-            ]]
+                    InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
+                    InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                ],[
+                    InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
+                    InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                ],[
+                    InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                ]]
             if CLONE_MODE == True:
                 buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
             reply_markup = InlineKeyboardMarkup(buttons)
