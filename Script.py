@@ -3,10 +3,22 @@
 # Ask Doubt on telegram @KingVJ01
 
 class script(object):
-    START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {} 👋,</blockquote>
-    
-ɪ ᴀᴍ ʟᴀᴛᴇꜱᴛ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ...💸</b>"""
+    START_TXT = """
+<b>👋 Welcome {},</b>
 
+<b>🎬 <u>𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫 — Telegram ka trusted movie bot</u></b>
+
+🎯 Naam daalo — movie ho, series ho ya anime —<br>
+<b>𝗥𝗲𝘀𝘂𝗹𝘁 𝗳𝘂𝗹𝗹 𝘀𝗽𝗲𝗲𝗱 𝘀𝗲 𝗺𝗶𝗹𝘁𝗮 𝗵𝗮𝗶 ⚡</b>
+
+📥 Links milenge directly message ke andar —<br>
+Kahin jump karne ki zarurat nahi, sab kuch yahin milega.
+
+👥 Private chats me bhi work karta hai, groups me bhi perfect fit 💯<br>
+🌐 Download & stream directly in Telegram — or switch to WebApp for a smoother ride.
+
+🍿 <b>𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫 = Clear. Fast. Fire. 🚀</b>
+"""
     CLONE_START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{}>{}</a></blockquote>
     
 ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ᴊᴜsᴛ ᴛʏᴘᴇ ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💘</b>"""
