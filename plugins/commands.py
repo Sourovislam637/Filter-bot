@@ -600,8 +600,8 @@ async def start(client, message):
     await k.edit_text("<b>✅ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴀɢᴀɪɴ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ</b>",reply_markup=InlineKeyboardMarkup(btn))
     return   
 
-@Client.on_message(filters.command('channel') & filters.user(ADMINS))
-async def channel_info(bot, message):
+        @Client.on_message(filters.command('channel') & filters.user(ADMINS))
+        async def channel_info(bot, message):
     text = '📑 **Indexed channels/groups**\n'
     for channel in CHANNELS:
         chat = await bot.get_chat(channel)
@@ -622,15 +622,15 @@ async def channel_info(bot, message):
         os.remove(file)
 
 
-@Client.on_message(filters.command('logs') & filters.user(ADMINS))
-async def log_file(bot, message):
+        @Client.on_message(filters.command('logs') & filters.user(ADMINS))
+        async def log_file(bot, message):
     try:
         await message.reply_document('TELEGRAM BOT.LOG')
     except Exception as e:
         await message.reply(str(e))
 
-@Client.on_message(filters.command('delete') & filters.user(ADMINS))
-async def delete(bot, message):
+        @Client.on_message(filters.command('delete') & filters.user(ADMINS))
+        async def delete(bot, message):
     reply = await bot.ask(message.from_user.id, "Now Send Me Media Which You Want to delete")
     if reply.media:
         msg = await message.reply("Processing...⏳", quote=True)
@@ -693,8 +693,8 @@ async def delete(bot, message):
                 await msg.edit('File not found in database')
 
 
-@Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
-async def delete_all_index(bot, message):
+        @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
+        async def delete_all_index(bot, message):
     await message.reply_text(
         'This will delete all indexed files.\nDo you want to continue??',
         reply_markup=InlineKeyboardMarkup(
@@ -708,16 +708,16 @@ async def delete_all_index(bot, message):
     )
 
 
-@Client.on_callback_query(filters.regex(r'^autofilter_delete'))
-async def delete_all_index_confirm(bot, query):
+        @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
+        async def delete_all_index_confirm(bot, query):
     col.drop()
     sec_col.drop()
     await query.answer('Piracy Is Crime')
     await query.message.edit('Succesfully Deleted All The Indexed Files.')
 
 
-@Client.on_message(filters.command('settings'))
-async def settings(client, message):
+        @Client.on_message(filters.command('settings'))
+        async def settings(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
@@ -883,8 +883,8 @@ async def settings(client, message):
 
 
 
-@Client.on_message(filters.command('set_template'))
-async def save_template(client, message):
+        @Client.on_message(filters.command('set_template'))
+        async def save_template(client, message):
     sts = await message.reply("Checking template")
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -927,8 +927,8 @@ async def save_template(client, message):
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
 
 
-@Client.on_message((filters.command(["request", "Request"]) | filters.regex("#request") | filters.regex("#Request")) & filters.group)
-async def requests(bot, message):
+        @Client.on_message((filters.command(["request", "Request"]) | filters.regex("#request") | filters.regex("#Request")) & filters.group)
+        async def requests(bot, message):
     if REQST_CHANNEL is None: return # Must add REQST_CHANNEL to use this feature
     if message.reply_to_message:
         chat_id = message.chat.id
@@ -1007,8 +1007,8 @@ async def requests(bot, message):
         ]]
         await message.reply_text("<b>Your request has been added! Please wait for some time.\n\nJoin Channel First & View Request</b>", reply_markup=InlineKeyboardMarkup(btn))
     
-@Client.on_message(filters.command("send") & filters.user(ADMINS))
-async def send_msg(bot, message):
+        @Client.on_message(filters.command("send") & filters.user(ADMINS))
+        async def send_msg(bot, message):
     if message.reply_to_message:
         target_id = message.text.split(" ", 1)[1]
         out = "Users Saved In DB Are:\n\n"
@@ -1033,8 +1033,8 @@ async def send_msg(bot, message):
     else:
         await message.reply_text("<b>Use this command as a reply to any message using the target chat id. For eg: /send userid</b>")
 
-@Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
-async def deletemultiplefiles(bot, message):
+        @Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
+        async def deletemultiplefiles(bot, message):
     chat_type = message.chat.type
     if chat_type != enums.ChatType.PRIVATE:
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command won't work in groups. It only works on my PM !</b>")
@@ -1060,8 +1060,8 @@ async def deletemultiplefiles(bot, message):
         parse_mode=enums.ParseMode.HTML
     )
 
-@Client.on_message(filters.command("shortlink"))
-async def shortlink(bot, message):
+        @Client.on_message(filters.command("shortlink"))
+        async def shortlink(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
@@ -1092,8 +1092,8 @@ async def shortlink(bot, message):
     await save_group_settings(grpid, 'is_shortlink', True)
     await reply.edit_text(f"<b>Successfully added shortlink API for {title}.\n\nCurrent Shortlink Website: <code>{shortlink_url}</code>\nCurrent API: <code>{api}</code></b>")
     
-@Client.on_message(filters.command("setshortlinkoff"))
-async def offshortlink(bot, message):
+        @Client.on_message(filters.command("setshortlinkoff"))
+        async def offshortlink(bot, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
         return await message.reply_text("I will Work Only in group")
@@ -1112,8 +1112,8 @@ async def offshortlink(bot, message):
     # ENABLE_SHORTLINK = False
     return await message.reply_text("Successfully disabled shortlink")
     
-@Client.on_message(filters.command("setshortlinkon"))
-async def onshortlink(bot, message):
+        @Client.on_message(filters.command("setshortlinkon"))
+        async def onshortlink(bot, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
         return await message.reply_text("I will Work Only in group")
@@ -1135,8 +1135,8 @@ async def onshortlink(bot, message):
     # ENABLE_SHORTLINK = True
     return await message.reply_text("Successfully enabled shortlink")
 
-@Client.on_message(filters.command("shortlink_info"))
-async def showshortlink(bot, message):
+        @Client.on_message(filters.command("shortlink_info"))
+        async def showshortlink(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
@@ -1171,8 +1171,8 @@ async def showshortlink(bot, message):
             return await message.reply_text("Shortener url and Tutorial Link Not Connected. Check this commands, /shortlink and /set_tutorial")
         
 
-@Client.on_message(filters.command("set_tutorial"))
-async def settutorial(bot, message):
+        @Client.on_message(filters.command("set_tutorial"))
+        async def settutorial(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
@@ -1201,8 +1201,8 @@ async def settutorial(bot, message):
     else:
         return await message.reply("<b>You entered Incorrect Format\n\nFormat: /set_tutorial your tutorial link</b>")
 
-@Client.on_message(filters.command("remove_tutorial"))
-async def removetutorial(bot, message):
+        @Client.on_message(filters.command("remove_tutorial"))
+        async def removetutorial(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
@@ -1225,15 +1225,15 @@ async def removetutorial(bot, message):
     await save_group_settings(grpid, 'is_tutorial', False)
     await reply.edit_text(f"<b>Successfully Removed Your Tutorial Link!!!</b>")
 
-@Client.on_message(filters.command("restart") & filters.user(ADMINS))
-async def stop_button(bot, message):
+        @Client.on_message(filters.command("restart") & filters.user(ADMINS))
+        async def stop_button(bot, message):
     msg = await bot.send_message(text="**🔄 𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙴𝚂 𝚂𝚃𝙾𝙿𝙴𝙳. 𝙱𝙾𝚃 𝙸𝚂 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶...**", chat_id=message.chat.id)       
     await asyncio.sleep(3)
     await msg.edit("**✅️ 𝙱𝙾𝚃 𝙸𝚂 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙴𝙳. 𝙽𝙾𝚆 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴**")
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@Client.on_message(filters.command("nofsub"))
-async def nofsub(client, message):
+        @Client.on_message(filters.command("nofsub"))
+        async def nofsub(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"<b>You are anonymous admin. Turn off anonymous admin and try again this command</b>")
@@ -1254,8 +1254,8 @@ async def nofsub(client, message):
     await save_group_settings(grpid, 'fsub', None)
     await message.reply_text(f"<b>Successfully removed force subscribe from {title}.</b>")
 
-@Client.on_message(filters.command('fsub'))
-async def fsub(client, message):
+        @Client.on_message(filters.command('fsub'))
+        async def fsub(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"<b>You are anonymous admin. Turn off anonymous admin and try again this command</b>")
@@ -1293,8 +1293,8 @@ async def fsub(client, message):
     await message.reply_text(f"<b>Successfully set force channels for {title} to\n\n{channels}\n\nYou can remove it by /nofsub.</b>")
         
 
-@Client.on_message(filters.command("add_premium"))
-async def give_premium_cmd_handler(client, message):
+        @Client.on_message(filters.command("add_premium"))
+        async def give_premium_cmd_handler(client, message):
     if PREMIUM_AND_REFERAL_MODE == False:
         return 
     user_id = message.from_user.id
@@ -1319,8 +1319,8 @@ async def give_premium_cmd_handler(client, message):
     else:
         await message.reply_text("<b>Usage: /add_premium user_id time \n\nExample /add_premium 1252789 10day \n\n(e.g. for time units '1day for days', '1hour for hours', or '1min for minutes', or '1month for months' or '1year for year')</b>")
         
-@Client.on_message(filters.command("remove_premium"))
-async def remove_premium_cmd_handler(client, message):
+        @Client.on_message(filters.command("remove_premium"))
+        async def remove_premium_cmd_handler(client, message):
     if PREMIUM_AND_REFERAL_MODE == False:
         return 
     user_id = message.from_user.id
@@ -1346,8 +1346,8 @@ async def remove_premium_cmd_handler(client, message):
     else:
         await message.reply_text("Usage: /remove_premium user_id")
         
-@Client.on_message(filters.command("plan"))
-async def plans_cmd_handler(client, message): 
+        @Client.on_message(filters.command("plan"))
+        async def plans_cmd_handler(client, message): 
     if PREMIUM_AND_REFERAL_MODE == False:
         return 
     btn = [            
@@ -1361,8 +1361,8 @@ async def plans_cmd_handler(client, message):
         reply_markup=reply_markup
     )
         
-@Client.on_message(filters.command("myplan"))
-async def check_plans_cmd(client, message):
+        @Client.on_message(filters.command("myplan"))
+        async def check_plans_cmd(client, message):
     if PREMIUM_AND_REFERAL_MODE == False:
         return 
     user_id  = message.from_user.id
@@ -1382,8 +1382,8 @@ async def check_plans_cmd(client, message):
         await asyncio.sleep(2)
         await m.delete()
 
-@Client.on_message(filters.command("totalrequests") & filters.private & filters.user(ADMINS))
-async def total_requests(client, message):
+        @Client.on_message(filters.command("totalrequests") & filters.private & filters.user(ADMINS))
+        async def total_requests(client, message):
     if join_db().isActive():
         total = await join_db().get_all_users_count()
         await message.reply_text(
@@ -1392,8 +1392,8 @@ async def total_requests(client, message):
             disable_web_page_preview=True
         )
 
-@Client.on_message(filters.command("purgerequests") & filters.private & filters.user(ADMINS))
-async def purge_requests(client, message):   
+        @Client.on_message(filters.command("purgerequests") & filters.private & filters.user(ADMINS))
+        async def purge_requests(client, message):   
     if join_db().isActive():
         await join_db().delete_all_users()
         await message.reply_text(
