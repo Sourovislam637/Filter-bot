@@ -28,7 +28,7 @@ async def start(client, message):
         pass
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-            InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],[
             InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
             InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
@@ -49,29 +49,29 @@ async def start(client, message):
     if len(message.command) != 2:
         if PREMIUM_AND_REFERAL_MODE == True:
             buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
             ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
-                InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
+                InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ᴀɴᴅ ʀᴇғᴇʀʀᴀʟ', callback_data='subscription')
             ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
             ]]
         else:
             buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
             ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
             ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
@@ -135,29 +135,29 @@ async def start(client, message):
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         if PREMIUM_AND_REFERAL_MODE == True:
             buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
             ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
-                InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
+                InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ᴀɴᴅ ʀᴇғᴇʀʀᴀʟ', callback_data='subscription')
             ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
             ]]
         else:
             buttons = [[
-                InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-                InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
             ],[
-                InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
-                InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
             ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
@@ -190,29 +190,29 @@ async def start(client, message):
         else:
             if PREMIUM_AND_REFERAL_MODE == True:
                 buttons = [[
-                    InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                    InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                    InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
+                    InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ᴀɴᴅ ʀᴇғᴇʀʀᴀʟ', callback_data='subscription')
                 ],[
-                    InlineKeyboardButton('📢 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 – 𝗧𝗮𝗽 𝘁𝗼 𝗝𝗼𝗶𝗻', url=CHNL_LNK)
+                    InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
                 ]]
             else:
                 buttons = [[
-                    InlineKeyboardButton('🤖 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 – 𝗟𝗲𝘁’𝘀 𝗚𝗼!', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('⤬ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('💸 𝗘𝗮𝗿𝗻 𝘄𝗶𝘁𝗵 𝗕𝗼𝘁', callback_data="shortlink_info"),
-                    InlineKeyboardButton('🍿 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽 🔥', url=GRP_LNK)
+                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ', callback_data="shortlink_info"),
+                    InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('🛠 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('🧠 𝗔𝗯𝗼𝘂𝘁 𝗕𝗼𝘁', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('👑 𝗚𝗲𝘁 𝗩𝗜𝗣 – 𝗕𝘂𝘆 𝗼𝗿 𝗥𝗲𝗳𝗲𝗿', url=CHNL_LNK)
+                    InlineKeyboardButton('ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)
                 ]]
             if CLONE_MODE == True:
                 buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
@@ -450,15 +450,15 @@ async def start(client, message):
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
                     btn = [[
-                        InlineKeyboardButton("✅ 𝗩𝗘𝗥𝗜𝗙𝗬", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
-            ],[
+                        InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                    ],[
         InlineKeyboardButton("ℹ️ 𝗛𝗢𝗪 𝗧𝗢 𝗩𝗘𝗥𝗜𝗙𝗬ें?", url=VERIFY_TUTORIAL)
-    ],[
+    ], [
         InlineKeyboardButton("💎 𝗦𝗞𝗜𝗣 𝗩𝗘𝗥𝗜𝗙𝗬 & 𝗨𝗡𝗟𝗢𝗖𝗞 𝗣𝗥𝗘𝗠𝗜𝗨𝗠", callback_data="subscription")
     ]]
-            text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
-            if PREMIUM_AND_REFERAL_MODE == True:
-                text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
+                    text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
+                    if PREMIUM_AND_REFERAL_MODE == True:
+                        text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
                     await message.reply_text(
                         text=text.format(message.from_user.mention),
                         protect_content=True,
@@ -515,16 +515,15 @@ async def start(client, message):
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
                     btn = [[
-                        Inl[
-                        InlineKeyboardButton("✅ 𝗩𝗘𝗥𝗜𝗙𝗬", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
-            ],[
+                        InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                    ],[
         InlineKeyboardButton("ℹ️ 𝗛𝗢𝗪 𝗧𝗢 𝗩𝗘𝗥𝗜𝗙𝗬ें?", url=VERIFY_TUTORIAL)
-    ],[
+    ], [
         InlineKeyboardButton("💎 𝗦𝗞𝗜𝗣 𝗩𝗘𝗥𝗜𝗙𝗬 & 𝗨𝗡𝗟𝗢𝗖𝗞 𝗣𝗥𝗘𝗠𝗜𝗨𝗠", callback_data="subscription")
     ]]
-            text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
-            if PREMIUM_AND_REFERAL_MODE == True:
-                text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
+                    text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
+                    if PREMIUM_AND_REFERAL_MODE == True:
+                        text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
                     await message.reply_text(
                         text=text.format(message.from_user.mention),
                         protect_content=True,
@@ -576,15 +575,15 @@ async def start(client, message):
     if not await db.has_premium_access(message.from_user.id):
         if not await check_verification(client, message.from_user.id) and VERIFY == True:
             btn = [[
-                        InlineKeyboardButton("✅ 𝗩𝗘𝗥𝗜𝗙𝗬", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
-            ],[
+                        InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                    ],[
         InlineKeyboardButton("ℹ️ 𝗛𝗢𝗪 𝗧𝗢 𝗩𝗘𝗥𝗜𝗙𝗬ें?", url=VERIFY_TUTORIAL)
-    ],[
+    ], [
         InlineKeyboardButton("💎 𝗦𝗞𝗜𝗣 𝗩𝗘𝗥𝗜𝗙𝗬 & 𝗨𝗡𝗟𝗢𝗖𝗞 𝗣𝗥𝗘𝗠𝗜𝗨𝗠", callback_data="subscription")
     ]]
-            text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
-            if PREMIUM_AND_REFERAL_MODE == True:
-                text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
+                    text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
+                    if PREMIUM_AND_REFERAL_MODE == True:
+                        text += "<b>\n\n📥 बिना वेरिफिकेशन के डायरेक्ट फाइल्स चाहिए? तो 'Skip & Get Premium' बटन पर क्लिक करें और प्रीमियम एक्सेस ले लें।</b>"
             await message.reply_text(
                 text=text.format(message.from_user.mention),
                 protect_content=True,
