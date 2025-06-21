@@ -59,16 +59,16 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://arsadbhaibsr1:yp8jnsfPx43jJthu@cluster0.kzp8k.mongodb.net/?retryWrites=true&w=majority&1appName=Cluster0")   # IF Multiple Database Is False Then Fill Only This Database Url.
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://arsadbhaibsr1:yp8jnsfPx43jJthu@cluster0.kzp8k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # IF Multiple Database Is False Then Fill Only This Database Url.
 DATABASE_NAME = environ.get('DATABASE_NAME', "arsadbhaibsr1")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'arsadbhaibsr1')
 
 MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', True)) # Set True or False
 
 # If Multiple Database Is True Then Fill All Three Below Database Uri Else You Will Get Error.
-O_DB_URI = environ.get('O_DB_URI', "mongodb+srv://varex23967:Fs1gSm3vzlfVTpIb@cluster0.kvd5504.mongodb.net/?retryWrites=true&w=majority&1appName=Cluster0")   # This Db Is For Other Data Store
-F_DB_URI = environ.get('F_DB_URI', "mongodb+srv://forokah246:D8WpfIARQE5hRPZT@cluster0.pv6aojo.mongodb.net/?retryWrites=true&w=majority&1appName=Cluster0")   # This Db Is For File Data Store
-S_DB_URI = environ.get('S_DB_URI', "mongodb+srv://teroy33892:fNpMtrKkioyHMGEc@cluster0.ssbscwz.mongodb.net/?retryWrites=true&w=majority&1appName=Cluster0")   # This Db is for File Data Store When First Db Is Going To Be Full.
+O_DB_URI = environ.get('O_DB_URI', "mongodb+srv://varex23967:Fs1gSm3vzlfVTpIb@cluster0.kvd5504.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # This Db Is For Other Data Store
+F_DB_URI = environ.get('F_DB_URI', "mongodb+srv://forokah246:D8WpfIARQE5hRPZT@cluster0.pv6aojo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # This Db Is For File Data Store
+S_DB_URI = environ.get('S_DB_URI', "mongodb+srv://teroy33892:fNpMtrKkioyHMGEc@cluster0.ssbscwz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # This Db is for File Data Store When First Db Is Going To Be Full.
 
 
 # Premium And Referal Settings
