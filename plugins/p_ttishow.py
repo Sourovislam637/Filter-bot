@@ -1,6 +1,4 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+
 
 import os, string, logging, random, asyncio, time, datetime, re, sys, json, base64
 from Script import script
@@ -72,7 +70,7 @@ async def save_group(bot, message):
                     parse_mode=enums.ParseMode.HTML
                 )  
         if settings["auto_delete"]:
-            await asyncio.sleep(600)
+            await asyncio.sleep(60)
             await (temp.MELCOW['welcome']).delete()
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))

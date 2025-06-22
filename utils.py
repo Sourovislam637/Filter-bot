@@ -1,7 +1,3 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
 import logging, asyncio, os, re, random, pytz, aiohttp, requests, string, json, http.client
 from info import *
 from imdb import Cinemagoer 
@@ -535,7 +531,7 @@ async def get_verify_shorted_link(link, url, api):
             logger.error(e)
             return link
     else:
-        shortzy = Shortzy(api_key=API, base_site=URL)
+        shortzy = Shortzy(api_key=API, base_site=url)
         link = await shortzy.convert(link)
         return link
         
@@ -604,51 +600,50 @@ async def send_all(bot, userid, files, ident, chat_id, user_name, query):
         ENABLE_SHORTLINK = settings['is_shortlink']
     else:
         await save_group_settings(message.chat.id, 'is_shortlink', False)
-        ENABLE_SHORTLINK = False
+    ENABLE_SHORTLINK = False
     try:
-        if ENABLE_SHORTLINK:
-            for file in files:
-                title = file["file_name"]
-                size = get_size(file["file_size"])
-                if not await db.has_premium_access(userid) and SHORTLINK_MODE == True:
-                    await bot.send_message(chat_id=userid, text=f"<b>Hᴇʏ ᴛʜᴇʀᴇ {user_name} 👋🏽 \n\n✅ Sᴇᴄᴜʀᴇ ʟɪɴᴋ ᴛᴏ ʏᴏᴜʀ ғɪʟᴇ ʜᴀs sᴜᴄᴄᴇssғᴜʟʟʏ ʙᴇᴇɴ ɢᴇɴᴇʀᴀᴛᴇᴅ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ\n\n🗃️ Fɪʟᴇ Nᴀᴍᴇ : {title}\n🔖 Fɪʟᴇ Sɪᴢᴇ : {size}</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📤 Dᴏᴡɴʟᴏᴀᴅ 📥", url=await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=files_{file['file_id']}"))]]))
-        else:
-            for file in files:
-                f_caption = file["caption"]
-                title = file["file_name"]
-                size = get_size(file["file_size"])
-                if CUSTOM_FILE_CAPTION:
-                    try:
-                        f_caption = CUSTOM_FILE_CAPTION.format(
-                            file_name='' if title is None else title,
-                            file_size='' if size is None else size,
-                            file_caption='' if f_caption is None else f_caption
-                        )
-                    except Exception as e:
-                        print(e)
-                        f_caption = f_caption
-                if f_caption is None:
-                    f_caption = f"{title}"
-                await bot.send_cached_media(
-                    chat_id=userid,
-                    file_id=file["file_id"],
-                    caption=f_caption,
-                    protect_content=True if ident == "filep" else False,
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                        ],[
-                            InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url=OWNER_LNK)
-                        ]]
+        for file in files:
+            title = file["file_name"]
+            size = get_size(file["file_size"])
+            f_caption = file["caption"]
+            if CUSTOM_FILE_CAPTION:
+                try:
+                    f_caption = CUSTOM_FILE_CAPTION.format(
+                        file_name='' if title is None else title,
+                        file_size='' if size is None else size,
+                        file_caption='' if f_caption is None else f_caption
                     )
-                )
+                except Exception as e:
+                    print(e)
+                    f_caption = f_caption
+            if f_caption is None:
+                f_caption = f"{title}"
+            if ENABLE_SHORTLINK:
+                is_premium = await db.has_premium_access(userid)
+                if not is_premium and SHORTLINK_MODE == True:
+                    link = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=files_{file['file_id']}")
+                    await bot.send_message(chat_id=userid, text=f"<b>Hey there {user_name} 👋🏽 \n\n✅ Secure link to your file has successfully been generated please click download button\n\n🗃️ File Name : {title}\n🔖 File Size : {size}</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📤 Download 📥", url=link)]]))
+                else:
+                    await bot.send_cached_media(
+                        chat_id=userid,
+                        file_id=file["file_id"],
+                        caption=f_caption,
+                        protect_content=True if ident == "filep" else False,
+                        reply_markup=InlineKeyboardMarkup(
+                            [[
+                                InlineKeyboardButton('Support Group', url=GRP_LNK),
+                                InlineKeyboardButton('Updates Channel', url=CHNL_LNK)
+                            ],[
+                                InlineKeyboardButton("Bot Owner", url=OWNER_LNK)
+                            ]]
+                        )
+                    )
     except UserIsBlocked:
-        await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
+        await query.answer('Unblock the bot mahn !', show_alert=True)
     except PeerIdInvalid:
-        await query.answer('Hᴇʏ, Sᴛᴀʀᴛ Bᴏᴛ Fɪʀsᴛ Aɴᴅ Cʟɪᴄᴋ Sᴇɴᴅ Aʟʟ', show_alert=True)
+        await query.answer('Hey, Start Bot First And Click Send All', show_alert=True)
     except Exception as e:
-        await query.answer('Hᴇʏ, Sᴛᴀʀᴛ Bᴏᴛ Fɪʀsᴛ Aɴᴅ Cʟɪᴄᴋ Sᴇɴᴅ Aʟʟ', show_alert=True)
+        await query.answer('Hey, Start Bot First And Click Send All', show_alert=True)
         
 async def get_cap(settings, remaining_seconds, files, query, total_results, search):
     if settings["imdb"]:
