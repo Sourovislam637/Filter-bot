@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")  # Replace with your token
+bot = telebot.TeleBot("7553146028:AAH9VDdtnQTXNE3BsdAk1LDcdhhpR3VuhY0")  # Replace with your token
 
 @bot.message_handler(func=lambda _: True)
 def reply(message):
