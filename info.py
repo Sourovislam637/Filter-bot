@@ -112,7 +112,7 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 
 # Token Verification Info :
-VERIFY = bool(environ.get('VERIFY', False))
+VERIFY = bool(environ.get('VERIFY', True))
 VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'dashboard.smallshorts.com')
 VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '4ca8f20ebd8b02f6fe1f55eb1e49136f69e2f5a0')
 VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/Asbhai_bsr/289')
