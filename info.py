@@ -113,8 +113,8 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 # Token Verification Info :
 VERIFY = bool(environ.get('VERIFY', True))
-VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'shrinkforearn.in')
-VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '42e84174eceb9661f177065846b130e37b6e368b')
+VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'dashboard.smallshorts.com')
+VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '4ca8f20ebd8b02f6fe1f55eb1e49136f69e2f5a0')
 VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/Asbhai_bsr/289')
 
 # If You Fill Second Shortner Then Bot Attach Both First And Second Shortner And Use It For Verify.
@@ -196,5 +196,6 @@ else:
 # Don't Remove Credit @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
+
 
 
