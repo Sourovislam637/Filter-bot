@@ -55,7 +55,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 About As', callback_data='about')
+                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
             ],[
                 InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
             ],[
@@ -69,14 +69,14 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 About As', callback_data='about')
+                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
             ],[
                 InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
             ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEDyoNowcdH4G1SYGyXcM5uTRiXQ-9IbAACFQEAAsiUZBRmRDCipxVsEx4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -141,7 +141,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 About As', callback_data='about')
+                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
             ],[
                 InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
             ],[
@@ -155,7 +155,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 About As', callback_data='about')
+                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
             ],[
                 InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
             ]]
@@ -196,7 +196,7 @@ async def start(client, message):
                     InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
                 ],[
                     InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('📖 About As', callback_data='about')
+                    InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
                 ],[
                     InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
                 ],[
@@ -210,14 +210,14 @@ async def start(client, message):
                     InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
                 ],[
                     InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('📖 About As', callback_data='about')
+                    InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗔𝘀', callback_data='about')
                 ],[
                     InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
                 ]]
             if CLONE_MODE == True:
                 buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
             reply_markup = InlineKeyboardMarkup(buttons)
-            m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
+            m=await message.reply_sticker("CAACAgUAAxkBAAEDyoNowcdH4G1SYGyXcM5uTRiXQ-9IbAACFQEAAsiUZBRmRDCipxVsEx4E") 
             await asyncio.sleep(1)
             await m.delete()
             await message.reply_photo(
@@ -453,6 +453,8 @@ async def start(client, message):
                         InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                     ],[
                         InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ", url=VERIFY_TUTORIAL)
+                    ],[
+                        InlineKeyboardButton("sᴋɪᴘ ᴀᴅᴅ", callback_data="skip_ad")
                     ]]
                     text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
                     if PREMIUM_AND_REFERAL_MODE == True:
@@ -516,6 +518,8 @@ async def start(client, message):
                         InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                     ],[
                         InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ", url=VERIFY_TUTORIAL)
+                    ],[
+                        InlineKeyboardButton("sᴋɪᴘ ᴀᴅᴅ", callback_data="skip_ad")
                     ]]
                     text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
                     if PREMIUM_AND_REFERAL_MODE == True:
@@ -574,6 +578,8 @@ async def start(client, message):
                 InlineKeyboardButton("ᴠᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
             ],[
                 InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ", url=VERIFY_TUTORIAL)
+            ],[
+                InlineKeyboardButton("sᴋɪᴘ ᴀᴅᴅ", callback_data="skip_ad")
             ]]
             text = "<b>👋 हे {}!\n\nआपने आज के लिए वेरिफिकेशन पूरा नहीं किया है।\n\nअगर आप अभी Verify करते हैं, तो आपको अगले 24 घंटे तक बॉट का पूरा एक्सेस फ्री में मिलेगा — कोई लिमिट नहीं, कोई रुकावट नहीं।</b>"
             if PREMIUM_AND_REFERAL_MODE == True:
