@@ -55,7 +55,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                InlineKeyboardButton('📖 About As', callback_data='about')
             ],[
                 InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
             ],[
@@ -69,7 +69,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                InlineKeyboardButton('📖 About As', callback_data='about')
             ],[
                 InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
             ]]
@@ -81,7 +81,7 @@ async def start(client, message):
         await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=f"Hey {message.from_user.mention}, I am a powerful and fast Auto-Filter Bot made for your groups.",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -141,7 +141,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                InlineKeyboardButton('📖 About As', callback_data='about')
             ],[
                 InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
             ],[
@@ -155,7 +155,7 @@ async def start(client, message):
                 InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
             ],[
                 InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                InlineKeyboardButton('📖 About As', callback_data='about')
             ],[
                 InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
             ]]
@@ -164,7 +164,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=f"Hey {message.from_user.mention}, I am a powerful and fast Auto-Filter Bot made for your groups.",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -196,7 +196,7 @@ async def start(client, message):
                     InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
                 ],[
                     InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                    InlineKeyboardButton('📖 About As', callback_data='about')
                 ],[
                     InlineKeyboardButton('👑 𝗕𝘂𝘆 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗔𝗰𝗰𝗲𝘀𝘀 & 𝗥𝗲𝗳𝗲𝗿', callback_data='subscription')
                 ],[
@@ -210,7 +210,7 @@ async def start(client, message):
                     InlineKeyboardButton('🎬 𝗠𝗼𝘃𝗶𝗲 𝗚𝗿𝗼𝘂𝗽', url=GRP_LNK)
                 ],[
                     InlineKeyboardButton('🎞️ 𝗕𝗼𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀', callback_data='help'),
-                    InlineKeyboardButton('📖 𝗔𝗯𝗼𝘂𝘁 𝗶𝗦𝘁𝗿𝗲𝗮𝗺𝗫', callback_data='about')
+                    InlineKeyboardButton('📖 About As', callback_data='about')
                 ],[
                     InlineKeyboardButton('📢 𝗝𝗼𝗶𝗻 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗨𝗽𝗱𝗮𝘁𝗲𝘀', url=CHNL_LNK)
                 ]]
@@ -222,7 +222,7 @@ async def start(client, message):
             await m.delete()
             await message.reply_photo(
                 photo=random.choice(PICS),
-                caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+                caption=f"Hey {message.from_user.mention}, I am a powerful and fast Auto-Filter Bot made for your groups.",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
@@ -1404,3 +1404,4 @@ async def purge_requests(client, message):
             parse_mode=enums.ParseMode.MARKDOWN,
             disable_web_page_preview=True
         )
+
